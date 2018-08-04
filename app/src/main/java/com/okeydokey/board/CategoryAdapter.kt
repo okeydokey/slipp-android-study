@@ -1,0 +1,57 @@
+package com.okeydokey.board
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.TextView
+
+data class Category(val name: String, val description: String)
+data class CategoryViewHolder(val categoryName: TextView, val categoryDescription: TextView)
+
+private val categories = arrayOf(
+        Category( "A카테고리", "A설명")
+        , Category( "B카테고리", "B설명")
+        , Category( "C카테고리", "C설명")
+        , Category( "D카테고리", "D설명")
+        , Category( "E카테고리", "E설명")
+)
+
+class CategoryAdapter(private val mContext: Context) : BaseAdapter() {
+
+    override fun getCount(): Int = categories.size
+
+    override fun getItem(position: Int): Any? = null
+
+    override fun getItemId(position: Int): Long = 0L
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+
+        val view : View
+
+        if (convertView == null) {
+            val inflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            view = inflater.inflate(R.layout.category_item, null, false)
+        } else {
+            view = convertView
+        }
+
+        val categoryViewHolder = CategoryViewHolder(view.findViewById(R.id.category_name), view.findViewById(R.id.category_description))
+
+        view.tag = categoryViewHolder
+
+        val categoryName = (view.tag as CategoryViewHolder).categoryName
+        val categoryDescription = (view.tag as CategoryViewHolder).categoryDescription
+
+        val currentCategory = categories[position]
+
+        categoryName.text = currentCategory.name
+        categoryDescription.text = currentCategory.description
+
+        return view
+    }
+}
+
+
+
