@@ -12,7 +12,7 @@ class CategoryTabActivity : ActivityGroup() {
         setContentView(R.layout.board_category_tab)
 
         val host : TabHost = findViewById(R.id.category_tab)
-        host.setup(this.getLocalActivityManager())
+        host.setup(this.localActivityManager)
 
         for ((index, value) in categories.withIndex()) {
             val spec = host.newTabSpec(value.name)
