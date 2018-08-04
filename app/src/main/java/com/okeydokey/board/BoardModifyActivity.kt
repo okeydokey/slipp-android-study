@@ -21,10 +21,15 @@ class BoardModifyActivity : AppCompatActivity() {
         category.text = categories[categoryNo.toInt() - 1].name
         val save = findViewById<Button>(R.id.register)
 
-        save.setOnClickListener { it ->
+        val board = boards[no.toInt() - 1]
 
-            val title = findViewById<EditText>(R.id.title)
-            val content = findViewById<EditText>(R.id.content)
+        val title = findViewById<EditText>(R.id.title)
+        val content = findViewById<EditText>(R.id.content)
+
+        title.setText(board.title)
+        content.setText(board.content)
+
+        save.setOnClickListener { it ->
 
             val new = Board(no
                     , categories[categoryNo.toInt() - 1]

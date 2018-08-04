@@ -1,9 +1,11 @@
 package com.okeydokey.board
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.StrictMode
 import android.support.v7.app.AppCompatActivity
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import java.net.URL
@@ -36,5 +38,14 @@ class BoardDetailActivity : AppCompatActivity() {
 
         boardContent.text = board.content
 
+        val modify = findViewById<Button>(R.id.modify)
+
+        modify.setOnClickListener { it ->
+
+            intent = Intent(this, BoardModifyActivity::class.java)
+            intent.putExtra("board", board.no)
+            intent.putExtra("category", board.category.no)
+            startActivity(intent);
+        }
     }
 }
