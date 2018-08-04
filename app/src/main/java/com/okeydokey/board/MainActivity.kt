@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         gridView.onItemClickListener =
             AdapterView.OnItemClickListener { parent, v, position, id ->
                 intent = Intent(this, CategoryTabActivity::class.java)
-                intent.putExtra("category", gridView.adapter.getItemId(position))
+                intent.putExtra("category", id)
                 startActivity(intent);
             }
     }

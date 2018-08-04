@@ -16,7 +16,8 @@ class BoardListActivity : AppCompatActivity() {
 
         listView.onItemClickListener =
                 AdapterView.OnItemClickListener { parent, v, position, id ->
-                    intent = Intent(this, BoardListActivity::class.java)
+                    intent = Intent(this, BoardDetailActivity::class.java)
+                    intent.putExtra("board", id)
                     startActivity(intent);
                 }
     }

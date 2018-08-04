@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+>
+    <TextView
+        android:id="@+id/board_category_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="카테고리"
+        android:layout_margin="4dp"/>
+
+    <TextView
+        android:id="@+id/board_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="제목"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_margin="4dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/board_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="김윤희"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:id="@+id/board_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="2018.08.05"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/board_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:layout_margin="4dp"/>
+
+    <TextView
+        android:id="@+id/board_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="내용"
+        android:textSize="16dp"
+        android:layout_margin="4dp"/>
+
+</LinearLayout>

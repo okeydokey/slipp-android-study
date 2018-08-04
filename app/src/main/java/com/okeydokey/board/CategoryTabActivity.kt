@@ -9,7 +9,7 @@ class CategoryTabActivity : ActivityGroup() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.board_category_tab)
+        setContentView(R.layout.activity_board_category_tab)
 
         val host : TabHost = findViewById(R.id.category_tab)
         host.setup(this.localActivityManager)
