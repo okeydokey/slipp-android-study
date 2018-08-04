@@ -3,6 +3,7 @@ package com.okeydokey.board
 import android.app.ActivityGroup
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.widget.TabHost
 
 class CategoryTabActivity : ActivityGroup() {
@@ -24,5 +25,12 @@ class CategoryTabActivity : ActivityGroup() {
         }
 
         host.currentTab = intent.getLongExtra("category",1).toInt() - 1
+
+        val fab = findViewById<FloatingActionButton>(R.id.add)
+        fab.setOnClickListener { it ->
+            intent = Intent(this, BoardRegisterActivity::class.java)
+            intent.putExtra("category", (host.currentTab + 1).toLong())
+            startActivity(intent);
+        }
     }
 }

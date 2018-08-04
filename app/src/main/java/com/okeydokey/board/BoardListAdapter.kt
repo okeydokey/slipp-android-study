@@ -17,7 +17,7 @@ import java.net.URL
 data class Board(val no: Long, val category: Category, val title: String, val content: String, val register: String, val registered: String, val image: String)
 data class BoardListViewHolder(val categoryName: TextView, val title: TextView, val register: TextView, val registered: TextView, val image: ImageView)
 
-val boards = arrayOf(
+var boards = arrayListOf(
         Board( 1, categories[0],"게시글1", "내용", "김윤희", "2018.08.01", "http://lh3.googleusercontent.com/-Vk3jWtpMBo0/AAAAAAAAAAI/AAAAAAAAAAA/AAnnY7oxEREwoWbk3yX5hg7lDeiZpB9-Zw/s64-c-mo/photo.jpg")
         , Board( 2, categories[0],"게시글2", "내용", "김윤희", "2018.08.02", "")
         , Board( 3, categories[1],"게시글3", "내용", "김윤희", "2018.08.03", "")
