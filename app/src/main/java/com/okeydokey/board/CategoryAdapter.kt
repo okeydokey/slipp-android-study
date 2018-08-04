@@ -7,15 +7,15 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 
-data class Category(val name: String, val description: String)
+data class Category(val no: Int, val name: String, val description: String)
 data class CategoryViewHolder(val categoryName: TextView, val categoryDescription: TextView)
 
-private val categories = arrayOf(
-        Category( "A카테고리", "A설명")
-        , Category( "B카테고리", "B설명")
-        , Category( "C카테고리", "C설명")
-        , Category( "D카테고리", "D설명")
-        , Category( "E카테고리", "E설명")
+val categories = arrayOf(
+        Category( 1,"A카테고리", "A설명")
+        , Category( 2,"B카테고리", "B설명")
+        , Category( 3,"C카테고리", "C설명")
+        , Category( 4,"D카테고리", "D설명")
+        , Category( 5,"E카테고리", "E설명")
 )
 
 class CategoryAdapter(private val mContext: Context) : BaseAdapter() {

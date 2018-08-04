@@ -1,5 +1,6 @@
 package com.okeydokey.board
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.AdapterView
@@ -17,8 +18,9 @@ class MainActivity : AppCompatActivity() {
         gridView.adapter = CategoryAdapter(this)
 
         gridView.onItemClickListener =
-                AdapterView.OnItemClickListener { parent, v, position, id ->
-                    Toast.makeText(this, "$position", Toast.LENGTH_SHORT).show()
-                }
+            AdapterView.OnItemClickListener { parent, v, position, id ->
+                intent = Intent(this, CategoryTabActivity::class.java)
+                startActivity(intent);
+            }
     }
 }
