@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 
-data class Category(val no: Int, val name: String, val description: String)
+data class Category(val no: Long, val name: String, val description: String)
 data class CategoryViewHolder(val categoryName: TextView, val categoryDescription: TextView)
 
 val categories = arrayOf(
@@ -22,9 +22,9 @@ class CategoryAdapter(private val mContext: Context) : BaseAdapter() {
 
     override fun getCount(): Int = categories.size
 
-    override fun getItem(position: Int): Any? = null
+    override fun getItem(position: Int): Any? = categories[position]
 
-    override fun getItemId(position: Int): Long = 0L
+    override fun getItemId(position: Int): Long = categories[position].no
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 

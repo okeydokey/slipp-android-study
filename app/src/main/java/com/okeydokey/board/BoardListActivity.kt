@@ -12,7 +12,7 @@ class BoardListActivity : AppCompatActivity() {
         setContentView(R.layout.board_list)
 
         val listView: ListView = findViewById(R.id.board_list)
-        listView.adapter = BoardListAdapter(this)
+        listView.adapter = BoardListAdapter(this, getIntent())
 
         listView.onItemClickListener =
                 AdapterView.OnItemClickListener { parent, v, position, id ->

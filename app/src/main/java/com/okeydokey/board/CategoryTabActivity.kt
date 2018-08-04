@@ -22,5 +22,7 @@ class CategoryTabActivity : ActivityGroup() {
             spec.setContent(intent)
             host.addTab(spec)
         }
+
+        host.currentTab = intent.getLongExtra("category",1).toInt() - 1
     }
 }
