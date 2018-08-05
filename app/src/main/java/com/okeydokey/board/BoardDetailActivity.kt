@@ -9,6 +9,9 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import java.net.URL
+import android.widget.Toast
+
+
 
 class BoardDetailActivity : AppCompatActivity() {
 
@@ -40,10 +43,22 @@ class BoardDetailActivity : AppCompatActivity() {
 
         val modify = findViewById<Button>(R.id.modify)
 
-        modify.setOnClickListener { it ->
-
+        modify.setOnClickListener {
             intent = Intent(this, BoardModifyActivity::class.java)
             intent.putExtra("board", board.no)
+            intent.putExtra("category", board.category.no)
+            startActivity(intent);
+        }
+
+        val delete = findViewById<Button>(R.id.delete)
+
+        delete.setOnClickListener {
+
+            boards.remove(board)
+
+            Toast.makeText(applicationContext, "삭제되었습니다.", Toast.LENGTH_LONG).show()
+
+            intent = Intent(this, CategoryTabActivity::class.java)
             intent.putExtra("category", board.category.no)
             startActivity(intent);
         }

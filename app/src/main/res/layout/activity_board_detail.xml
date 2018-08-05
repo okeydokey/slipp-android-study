@@ -9,14 +9,14 @@
         android:id="@+id/board_category_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="카테고리"
+        android:text="@string/category"
         android:layout_margin="4dp"/>
 
     <TextView
         android:id="@+id/board_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="제목"
+        android:text="@string/title"
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_margin="4dp"/>
@@ -29,7 +29,7 @@
             android:id="@+id/board_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="김윤희"
+            android:text="@string/register"
             android:layout_margin="4dp"/>
 
         <TextView
@@ -53,14 +53,25 @@
         android:id="@+id/board_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="내용"
-        android:textSize="16dp"
+        android:text="@string/content"
+        android:textSize="20sp"
         android:layout_margin="4dp"/>
-
-    <Button
-        android:id="@+id/modify"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="수정"
-        />
+        android:orientation="horizontal"
+        android:layout_gravity="end">
+        <Button
+            android:id="@+id/modify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/modify"
+            />
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            />
+    </LinearLayout>
 </LinearLayout>
