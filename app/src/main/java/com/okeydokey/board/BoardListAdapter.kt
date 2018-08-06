@@ -38,7 +38,7 @@ class BoardListAdapter : BaseAdapter {
     constructor(mContext: Context, intent: Intent) : super() {
         this.mContext = mContext
         this.intent = intent
-        boardsByCategory = boards.filter { board -> board.category.no == intent.getLongExtra("category",1) }
+        this.boardsByCategory = boards.filter { board -> board.category.no == intent.getLongExtra("category",1) }
     }
 
     override fun getCount(): Int = boardsByCategory.size

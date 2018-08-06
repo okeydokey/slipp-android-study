@@ -5,12 +5,8 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.StrictMode
 import android.support.v7.app.AppCompatActivity
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import java.net.URL
-import android.widget.Toast
-
 
 
 class BoardDetailActivity : AppCompatActivity() {
@@ -62,5 +58,27 @@ class BoardDetailActivity : AppCompatActivity() {
             intent.putExtra("category", board.category.no)
             startActivity(intent);
         }
+
+        val commentButton = findViewById<Button>(R.id.comment)
+
+        commentButton.setOnClickListener {
+            intent = Intent(this, BoardCommentActivity::class.java)
+            intent.putExtra("board", board.no)
+            startActivity(intent);
+        }
+
+        val commentAll = findViewById<TextView>(R.id.comment_all)
+
+        commentAll.setOnClickListener {
+            intent = Intent(this, BoardCommentActivity::class.java)
+            intent.putExtra("board", board.no)
+            startActivity(intent);
+        }
+
+        val commentQty = findViewById<TextView>(R.id.comment_qty)
+        commentQty.text = CommentListAdapter(this, intent).count.toString()
+
+        val commentListView: ListView = findViewById(R.id.comment_list)
+        commentListView.adapter = CommentListAdapter(this, intent)
     }
 }

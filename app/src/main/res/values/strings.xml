@@ -7,4 +7,7 @@
     <string name="title">제목</string>
     <string name="register">김윤희</string>
     <string name="content">내용</string>
+    <string name="comment_button">댓글 쓰기</string>
+    <string name="comment">댓글</string>
+    <string name="comment_register">등록</string>
 </resources>
