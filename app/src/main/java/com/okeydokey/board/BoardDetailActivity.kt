@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.StrictMode
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.*
 import java.net.URL
 
@@ -39,7 +40,17 @@ class BoardDetailActivity : AppCompatActivity() {
 
         val modify = findViewById<Button>(R.id.modify)
 
+        if(!isSignIn) {
+            modify.visibility = View.GONE
+        }
+
         modify.setOnClickListener {
+            if(!isSignIn) {
+                intent = Intent(this, SignInActivity::class.java)
+                startActivity(intent);
+                return@setOnClickListener
+            }
+
             intent = Intent(this, BoardModifyActivity::class.java)
             intent.putExtra("board", board.no)
             intent.putExtra("category", board.category.no)
@@ -48,7 +59,17 @@ class BoardDetailActivity : AppCompatActivity() {
 
         val delete = findViewById<Button>(R.id.delete)
 
+        if(!isSignIn) {
+            delete.visibility = View.GONE
+        }
+
         delete.setOnClickListener {
+
+            if(!isSignIn) {
+                intent = Intent(this, SignInActivity::class.java)
+                startActivity(intent);
+                return@setOnClickListener
+            }
 
             boards.remove(board)
 
@@ -62,6 +83,13 @@ class BoardDetailActivity : AppCompatActivity() {
         val commentButton = findViewById<Button>(R.id.comment)
 
         commentButton.setOnClickListener {
+
+            if(!isSignIn) {
+                intent = Intent(this, SignInActivity::class.java)
+                startActivity(intent);
+                return@setOnClickListener
+            }
+
             intent = Intent(this, BoardCommentActivity::class.java)
             intent.putExtra("board", board.no)
             startActivity(intent);

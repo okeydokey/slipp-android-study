@@ -10,4 +10,8 @@
     <string name="comment_button">댓글 쓰기</string>
     <string name="comment">댓글</string>
     <string name="comment_register">등록</string>
+    <string name="email">이메일</string>
+    <string name="password">패스워드</string>
+    <string name="sign_in">로그인</string>
+    <string name="sign_on">회원가입</string>
 </resources>

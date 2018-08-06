@@ -27,7 +27,13 @@ class CategoryTabActivity : ActivityGroup() {
         host.currentTab = intent.getLongExtra("category",1).toInt() - 1
 
         val fab = findViewById<FloatingActionButton>(R.id.add)
-        fab.setOnClickListener { it ->
+        fab.setOnClickListener {
+            if(!isSignIn) {
+                intent = Intent(this, SignInActivity::class.java)
+                startActivity(intent);
+                return@setOnClickListener
+            }
+
             intent = Intent(this, BoardRegisterActivity::class.java)
             intent.putExtra("category", (host.currentTab + 1).toLong())
             startActivity(intent);

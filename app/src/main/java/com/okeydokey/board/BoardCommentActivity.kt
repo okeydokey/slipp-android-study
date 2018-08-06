@@ -21,6 +21,12 @@ class BoardCommentActivity : AppCompatActivity() {
         val save = findViewById<Button>(R.id.comment_register)
 
         save.setOnClickListener {
+            if(!isSignIn) {
+                intent = Intent(this, SignInActivity::class.java)
+                startActivity(intent);
+                return@setOnClickListener
+            }
+
             val comment = findViewById<EditText>(R.id.comment)
 
             var no = (comments.size + 1).toLong()
