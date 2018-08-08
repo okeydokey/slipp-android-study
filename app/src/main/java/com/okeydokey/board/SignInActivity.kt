@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_sign_in.view.*
 
 data class User(val no: Long, val email: String, val password: String)
 
@@ -29,6 +28,10 @@ class SignInActivity : AppCompatActivity() {
         val email = findViewById<EditText>(R.id.email)
         val password = findViewById<EditText>(R.id.password)
 
+        val signOnEmail = intent.getStringExtra("email")
+
+        email.setText(signOnEmail, TextView.BufferType.EDITABLE)
+
         signIn.setOnClickListener {
 
             val exists = users.any { user -> user.email == email.text.toString() && user.password == password.text.toString() }
@@ -41,6 +44,13 @@ class SignInActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "아이디가 없거나 패스워드가 틀렸습니다.", Toast.LENGTH_LONG).show()
             }
 
+        }
+
+        val signOn = findViewById<TextView>(R.id.sign_on)
+
+        signOn.setOnClickListener {
+            intent = Intent(this, SignOnActivity::class.java)
+            startActivity(intent);
         }
 
     }
